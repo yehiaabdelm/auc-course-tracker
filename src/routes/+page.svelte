@@ -10,8 +10,12 @@
 </script>
 
 <div class="container">
-	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">AUC Course Tracker</h1>
-
+	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-3">
+		AUC Course Tracker
+	</h1>
+	<p class="scroll-m-20 text-lg text-gray-500">
+		Track courses and get notified when a seat is available
+	</p>
 	<div class="flex flex-col gap-1.5">
 		<form method="POST" use:enhance>
 			<div>
@@ -32,19 +36,24 @@
 					<Input type="text" id="crn" name="crn7" placeholder="crn" />
 				</div>
 			</div>
-			<div class="button">
+			<div class="end">
+				<p class="text-sm text-muted-foreground">
+					Please make sure your input is correct as it is not being validated.
+				</p>
+			</div>
+			<div class="end">
 				<Button>Submit</Button>
 			</div>
 		</form>
 		{#if form?.message}
-            <Alert.Root variant="destructive">
-                <AlertCircle class="h-4 w-4" />
-                <Alert.Title>Error</Alert.Title>
-                <Alert.Description>
-                    {form.message}
-                </Alert.Description>
-            </Alert.Root>
-        {/if}
+			<Alert.Root variant="destructive">
+				<AlertCircle class="h-4 w-4" />
+				<Alert.Title>Error</Alert.Title>
+				<Alert.Description>
+					{form.message}
+				</Alert.Description>
+			</Alert.Root>
+		{/if}
 	</div>
 </div>
 
@@ -53,7 +62,7 @@
 		margin-top: 1rem;
 	}
 
-	div.button {
+	div.end {
 		display: flex;
 		/* to the right */
 		justify-content: flex-end;

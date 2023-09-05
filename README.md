@@ -26,4 +26,16 @@ Setup cron job on mergent. They have a generous (?) free tier with 1,000 invocat
 
 # 5:51 AM
 
-Okay cron job on mergent doesn't seem to be working. Serverless execution time not an issue anymore, deploying on a pro plan.
+Okay cron job on mergent doesn't seem to be working. Serverless execution time not an issue anymore, deploying on a pro plan. (Push)
+
+# 6:20 AM
+
+Cron job is working. First email received.
+
+# 6:28 AM
+
+Probably the final push today. Edge case: if there are a lot of spots in a course it will keep sending emails, but logically who
+
+# 7:13 AM
+
+Had to add an opt out option, would be rude not to. Will turn off webhooks in two days, so it won't matter much. But just in case. (Push)
