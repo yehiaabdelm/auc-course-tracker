@@ -129,7 +129,7 @@ export async function POST({ request }) {
 
             // if someone has added this course to the database check if it has remaining seats and send an email
             const exists = crnsAndEmails.find(crnAndEmail => crnAndEmail.crn === crn)
-            if (exists) {
+            if (exists && exists.emails.length > 0) { // if the course exists in the database and has emails
                 const courseName = courseNameElement.text().trim();
                 const remainingPlaces = Number(remainingPlacesElement.text().trim());
 
