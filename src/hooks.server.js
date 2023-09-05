@@ -11,7 +11,6 @@ const protectedAdminRoutes = [
 ]
 
 export const handle = async ({ resolve, event }) => {
-    // await connect()
-
+    await connect();
     return await resolve(event);
 }

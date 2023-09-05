@@ -5,3 +5,8 @@ I need to register a course, but don't want to keep checking self service banner
 # 1:53 AM
 
 I actually don't need to store all the courses in the database (my initial conclusion). (Push)
+
+
+# 3:45 AM
+
+Don't know why this took so long, but the database and form submission works for now. (Push)
