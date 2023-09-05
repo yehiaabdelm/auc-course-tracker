@@ -8,17 +8,7 @@ export const actions = {
         try {
             await Course.updateMany({}, {
                 $pull: { emails: email },
-            }, (err, result) => {
-                if (err) {
-                    console.error(err);
-                } else {
-                    console.log(`Removed ${email} from all courses`);
-                }
             });
-            return {
-                error: false,
-                message: `Removed ${email} from all courses`
-            }
         }
         catch (e) {
             return fail(400,
@@ -27,6 +17,10 @@ export const actions = {
                     message: 'An error happened while removing your email from all courses',
                 }
             );
+        }
+        return {
+            error: false,
+            message: `Removed ${email} from all courses`
         }
     }
 

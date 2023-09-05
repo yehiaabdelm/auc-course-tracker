@@ -1,4 +1,5 @@
 <script>
+	import { enhance } from '$app/forms';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 	import { Button } from '$lib/components/ui/button';
@@ -11,34 +12,42 @@
 </script>
 
 <div class="container">
-	<p class="scroll-m-20 text-lg text-gray-500">Please input your email to stop receiving emails</p>
-	<form action="POST">
+	<div class="padd" style="padding-bottom: 1em">
+		<p class="scroll-m-20 text-lg text-gray-800">
+			Please input your email to stop receiving emails
+		</p>
+	</div>
+	<form method="POST" use:enhance>
 		<div>
 			<Label for="email">Email</Label>
 			<div class="email padd">
 				<Input type="email" id="email" name="email" placeholder="email" />
 			</div>
 		</div>
-		<div class="end">
+		<div class="end padd">
 			<Button>Submit</Button>
 		</div>
 	</form>
 	{#if form?.error}
-		<Alert.Root variant="destructive">
-			<AlertCircle class="h-4 w-4" />
-			<Alert.Title>Error</Alert.Title>
-			<Alert.Description>
-				{form.message}
-			</Alert.Description>
-		</Alert.Root>
+		<div class="padd">
+			<Alert.Root variant="destructive">
+				<AlertCircle class="h-4 w-4" />
+				<Alert.Title>Error</Alert.Title>
+				<Alert.Description>
+					{form.message}
+				</Alert.Description>
+			</Alert.Root>
+		</div>
 	{:else if form?.message}
-		<Alert.Root>
-			<Terminal class="h-4 w-4" />
-			<Alert.Title>Success!</Alert.Title>
-			<Alert.Description>
-				{form.message}
-			</Alert.Description>
-		</Alert.Root>
+		<div class="padd">
+			<Alert.Root>
+				<Terminal class="h-4 w-4" />
+				<Alert.Title>Success!</Alert.Title>
+				<Alert.Description>
+					{form.message}
+				</Alert.Description>
+			</Alert.Root>
+		</div>
 	{/if}
 </div>
 
