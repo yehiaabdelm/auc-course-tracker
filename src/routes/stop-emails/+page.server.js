@@ -1,5 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import { Course } from '$lib/db/models';
+import { Course } from '$lib/server/models';
 
 export const actions = {
     default: async ({ request }) => {
