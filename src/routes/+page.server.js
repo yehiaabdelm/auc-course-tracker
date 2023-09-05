@@ -8,7 +8,7 @@ class DuplicateError extends Error {
     }
 }
 
-// Inefficient, but I don't give a fuck
+// Inefficient, but I don't care rn
 const addEmailToCourse = async (crn, userEmail) => {
     try {
         console.log(crn, userEmail);
@@ -36,7 +36,7 @@ const addEmailToCourse = async (crn, userEmail) => {
         return course;
     } catch (error) {
         if (error instanceof DuplicateError) {
-            console.log('error message',error.message);
+            console.log('error message', error.message);
             return { error: true, crn: error.message };
         } else {
             throw error; // Re-throw other errors
@@ -65,7 +65,7 @@ export const actions = {
                     }
                 };
             }
-            
+
             if (duplicateCrns.length > 0) {
                 console.log(duplicateCrns)
                 return fail(400, {
