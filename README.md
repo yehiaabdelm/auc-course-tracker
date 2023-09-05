@@ -39,3 +39,7 @@ Probably the final push today. Edge case: if there are a lot of spots in a cours
 # 7:13 AM
 
 Had to add an opt out option, would be rude not to. Will turn off webhooks in two days, so it won't matter much. But just in case. (Push)
+
+# 3:08 PM
+
+Now storing sent emails. Should of done this from the beginning.
