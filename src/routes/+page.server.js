@@ -69,7 +69,7 @@ export const actions = {
             if (duplicateCrns.length > 0) {
                 console.log(duplicateCrns)
                 return fail(400, {
-                    message: `You are already signed up for these CRNs: ${duplicateCrns.join(', ')}. The rest of your CRNs have been added successfully.`,
+                    message: `You are already tracking these CRNs: ${duplicateCrns.join(', ')}. The rest of your CRNs have been added successfully.`,
                     failed_to_add_emails: true,
                 });
             }

@@ -2,9 +2,16 @@ import { json } from '@sveltejs/kit'
 import cheerio from 'cheerio'
 import { Course } from '$lib/server/models.js'
 import { sendEmail } from '$lib/server/email';
+import { AUTH } from '$env/static/private'
 // update the courses for in the database and find courses with seats remaining > 0 and send emails to the emails in the database
 /** @type {import('./$types').RequestHandler} */
-export async function POST() {
+export async function POST({ request }) {
+    console.log(request.headers)
+    const authorizationHeader = request.headers.get('Authorization');
+
+    if (authorizationHeader !== AUTH) {
+        return json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     const crnsAndEmails = await Course.find({});
 

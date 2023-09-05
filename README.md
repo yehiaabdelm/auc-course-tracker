@@ -15,6 +15,15 @@ Don't know why this took so long, but the database and form submission works for
 Wrote the code for the webhook that should be called ~2 times an hour (maybe more?). This webhook fetches fresh course data and checks whether any of the CRNs that are already in the database have any remaining places (>0). If yes, it sends an email to everyone who is tracking these courses.
 
 Two main challenges here:
+
 1. Vercel serverless functions timeout after 10 seconds (on the free plan), so I might have to just look for an alternative if the function doesn't fast enough.
 2. I don't know if the email sending will be the bottle neck. Right now it's finishing after around 6.7s, without sending any emails.
-(Push)
+   (Push)
+
+# 5:11 AM
+
+Setup cron job on mergent. They have a generous (?) free tier with 1,000 invocations, should be enough for the week. Drop and add ends September 7th, so we will probably need around (24+24+12)\*2=120 invocations if I release at 12:00PM on Tue 5 Sep. Hope my math is right.
+
+# 5:51 AM
+
+Okay cron job on mergent doesn't seem to be working. Serverless execution time not an issue anymore, deploying on a pro plan.
