@@ -53,3 +53,7 @@ Had to add an opt out option, would be rude not to. Will turn off webhooks in tw
 ### 3:08 PM
 
 Now storing sent emails. Should have done this from the beginning.
+
+### 12:35 AM, Wed 6 Sep
+
+Added more complete opt out. Users are now able to opt out of a specific course OR all courses.

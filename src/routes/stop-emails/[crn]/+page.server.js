@@ -15,8 +15,8 @@ export const actions = {
     default: async ({ request }) => {
         const formData = Object.fromEntries(await request.formData());
         const { email, crn, courseName } = formData;
-        console.log(email, crn, courseName)
-        try{
+
+        try {
             await Course.updateOne(
                 { crn: crn },
                 {

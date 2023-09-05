@@ -25,6 +25,11 @@
 			</div>
 		</div>
 		<div class="end padd">
+			<p class="text-sm text-muted-foreground">
+				Please make sure your input is correct as it is not being validated.
+			</p>
+		</div>
+		<div class="end padd">
 			<Button>Submit</Button>
 		</div>
 	</form>

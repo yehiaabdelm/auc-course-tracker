@@ -14,7 +14,9 @@
 <div class="container">
 	<div class="padd" style="padding-bottom: 1em">
 		<p class="scroll-m-20 text-lg text-gray-800">
-			Please input your email to stop receiving emails for {data?.courseName} ({data?.crn})
+			Please input your email to stop receiving emails for <strong
+				>{data?.courseName} (CRN: {data?.crn})</strong
+			>
 		</p>
 	</div>
 	<form method="POST" use:enhance>
@@ -31,6 +33,11 @@
 				/>
 				<input class="hidden" type="text" id="crn" name="crn" value={data?.crn} />
 			</div>
+		</div>
+		<div class="end padd">
+			<p class="text-sm text-muted-foreground">
+				Please make sure your input is correct as it is not being validated.
+			</p>
 		</div>
 		<div class="end padd">
 			<Button>Submit</Button>
