@@ -56,7 +56,7 @@ export const actions = {
         console.log(email, crns)
         try {
             for (const key in crns) {
-                const value = crns[key];
+                const value = crns[key].trim();
                 if (value !== '') {
                     console.log(value, email)
                     const result = await addEmailToCourse(value, email)
