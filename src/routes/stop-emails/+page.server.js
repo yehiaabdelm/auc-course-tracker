@@ -14,7 +14,7 @@ export const actions = {
             return fail(400,
                 {
                     error: true,
-                    message: 'An error happened while removing your email from all courses',
+                    message: 'An error happened while removing your email from all emails',
                 }
             );
         }
