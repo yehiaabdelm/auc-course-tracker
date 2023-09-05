@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit'
 import cheerio from 'cheerio'
-import { Course } from '$lib/server/models.js'
+import { Course, Email } from '$lib/server/models.js'
 import { sendEmail } from '$lib/server/email';
 import { AUTH } from '$env/static/private'
 // update the courses for in the database and find courses with seats remaining > 0 and send emails to the emails in the database
@@ -150,6 +150,11 @@ export async function POST({ request }) {
         const emailBody = `Hello, <br><br> ${courseName} (${crn}) has ${remainingPlaces} remaining places. <br><br> The instructor is ${instructorName}. <br><br> Best regards, <br> AUC Course Tracker <br> <br> If you want to opt out visit <a href="https://auc-course-tracker.vercel.app/stop-emails">this link</a>.`;
         const emailSubject = `AUC Course Tracker: ${courseName} (${crn}) has ${remainingPlaces} remaining places`;
         await sendEmail(emails, emailSubject, emailBody);
+        await Email.create({
+            recipients: emails,
+            subject: emailSubject,
+            body: emailBody
+        })
     }
 
     return json(crnsToSendEmailFor);
