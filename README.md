@@ -16,7 +16,7 @@ Wrote the code for the webhook that should be called ~2 times an hour (maybe mor
 
 Two main challenges here:
 
-1. Vercel serverless functions timeout after 10 seconds (on the free plan), so I might have to just look for an alternative if the function doesn't fast enough.
+1. Vercel serverless functions timeout after 10 seconds (on the free plan), so I might have to just look for an alternative if the function doesn't execute fast enough.
 2. I don't know if the email sending will be the bottle neck. Right now it's finishing after around 6.7s, without sending any emails.
    (Push)
 
