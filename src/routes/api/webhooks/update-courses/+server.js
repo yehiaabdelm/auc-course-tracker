@@ -147,7 +147,7 @@ export async function POST({ request }) {
 
     for (const c of crnsToSendEmailFor) {
         const { crn, courseName, remainingPlaces, instructorName, emails } = c;
-        const emailBody = `Hello, <br><br> ${courseName} (${crn}) has ${remainingPlaces} remaining place(s). <br><br> The instructor is ${instructorName}. <br><br> Best regards, <br> AUC Course Tracker <br> <br> If you want to stop receiving emails visit <a href="https://auc-course-tracker.vercel.app/stop-emails">this link</a> and submit your email.`;
+        const emailBody = `Hello, <br><br> ${courseName} (${crn}) has ${remainingPlaces} remaining place(s). <br><br> The instructor is ${instructorName}. <br><br> Best regards, <br> AUC Course Tracker <br> <br>  If you want to stop receiving emails for this specific CRN visit <a href="https://auc-course-tracker.vercel.app/stop-emails/${crn}?courseName=${courseName}">this link</a> and submit your email. <br> <br> If you want to stop receiving ALL emails visit <a href="https://auc-course-tracker.vercel.app/stop-emails">this link</a> and submit your email.`;
         const emailSubject = `AUC Course Tracker: ${courseName} (${crn}) has ${remainingPlaces} remaining place(s)`;
         await sendEmail(emails, emailSubject, emailBody);
         await Email.create({

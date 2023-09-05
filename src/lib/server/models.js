@@ -6,16 +6,16 @@ const courseSchema = new mongoose.Schema({
         index: true,
     },
     remaining_seats: Number,
-    emails: [String],
+    emails: [String]
 }, { timestamps: true });
 
 const emailSchema = new mongoose.Schema({
     recipients: [String],
     subject: String,
     body: String
-},{timestamps: true})
+}, { timestamps: true })
 
 const Course = mongoose.model('course', courseSchema);
-const Email = mongoose.model('email',emailSchema)
+const Email = mongoose.model('email', emailSchema)
 
 export { Course, Email }

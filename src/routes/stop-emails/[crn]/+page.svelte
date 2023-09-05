@@ -14,7 +14,7 @@
 <div class="container">
 	<div class="padd" style="padding-bottom: 1em">
 		<p class="scroll-m-20 text-lg text-gray-800">
-			Please input your email to stop receiving ALL emails
+			Please input your email to stop receiving emails for {data?.courseName} ({data?.crn})
 		</p>
 	</div>
 	<form method="POST" use:enhance>
@@ -22,6 +22,14 @@
 			<Label for="email">Email</Label>
 			<div class="email padd">
 				<Input type="email" id="email" name="email" placeholder="email" />
+				<input
+					class="hidden"
+					type="text"
+					id="courseName"
+					name="courseName"
+					value={data?.courseName}
+				/>
+				<input class="hidden" type="text" id="crn" name="crn" value={data?.crn} />
 			</div>
 		</div>
 		<div class="end padd">
@@ -52,10 +60,12 @@
 </div>
 
 <style>
+	.hidden {
+		display: none;
+	}
 	.padd {
 		margin-top: 1rem;
 	}
-
 	div.end {
 		display: flex;
 		/* to the right */
