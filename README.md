@@ -34,7 +34,7 @@ Cron job is working. First email received.
 
 # 6:28 AM
 
-Probably the final push today. Edge case: if there are a lot of spots in a course it will keep sending emails, but logically who
+Probably the final push today. Edge case: if there are a lot of spots in a course it will keep sending emails, but logically who would input a course that has seats left.
 
 # 7:13 AM
 
