@@ -61,4 +61,5 @@ Added more complete opt out. Users are now able to opt out of a specific course 
 ### 8:30 AM
 
 Got the course I want! 
-![Alt text](success.jpeg)
+<img src="success.jpeg" alt="Success" style="max-width: 300px;">
+
