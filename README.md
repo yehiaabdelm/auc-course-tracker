@@ -4,7 +4,8 @@ I want to avoid a stupid core course and focus on the math and CS courses I'm ta
 
 Will turn the cron jobs off after September 7, 2023 (drop and add deadline).
 
-![App](image.png)
+![App](image-1.png)
+
 
 ## Timeline
 

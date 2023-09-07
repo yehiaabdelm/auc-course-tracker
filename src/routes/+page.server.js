@@ -12,7 +12,7 @@ class DuplicateError extends Error {
 export async function load() {
 
     const latestEmail = await Email.findOne({}, {}, { sort: { 'createdAt': -1 } });
-    console.log(latestEmail)
+
     return {
         lastEmailDate: latestEmail?.createdAt,
     };
