@@ -61,3 +61,7 @@ Added more complete opt out. Users are now able to opt out of a specific course 
 ### 8:30 AM (Got the course I want!)
 
 <img src="success.jpeg" alt="Success" width="300px">
+
+### 9:02 PM, Thu 7 Sep
+
+As the 12:00 AM deadline approaches I increased the cron jobs to hit the endpoint 4 times an hour instead of 2.

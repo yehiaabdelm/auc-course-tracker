@@ -1,5 +1,5 @@
 import { redirect, fail } from '@sveltejs/kit'
-import { Course } from '$lib/server/models.js'
+import { Course, Email } from '$lib/server/models.js'
 
 class DuplicateError extends Error {
     constructor(message) {
@@ -7,6 +7,16 @@ class DuplicateError extends Error {
         this.name = "DuplicateError"; // Set the error name
     }
 }
+
+/** @type {import('./$types').PageServerLoad} */
+export async function load() {
+
+    const latestEmail = await Email.findOne({}, {}, { sort: { 'createdAt': -1 } });
+
+    return {
+        lastEmailDate: latestEmail?.createdAt,
+    };
+};
 
 // Inefficient, but I don't care rn
 const addEmailToCourse = async (crn, userEmail) => {

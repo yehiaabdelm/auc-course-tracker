@@ -6,6 +6,7 @@
 	import { AlertCircle } from 'lucide-svelte';
 	import * as Alert from '$lib/components/ui/alert';
 
+	export let data;
 	export let form;
 </script>
 
@@ -13,9 +14,18 @@
 	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-3">
 		AUC Course Tracker
 	</h1>
-	<p class="scroll-m-20 text-lg text-gray-500">
-		Track courses and get notified when a seat is available
-	</p>
+	<div class="flex flex-col gap-3">
+		<p class="scroll-m-20 text-3xl text-gray-500">
+			Track courses and get notified when a seat is available.
+		</p>
+		<p class="scroll-m-20 text-xl text-gray-500">
+			Input the CRNs you want to track and we will send you an email when a seat is available.
+		</p>
+		<p class="scroll-m-20 text-sm text-gray-500 italic">
+			Last email sent at: {data?.lastUpdated}
+		</p>
+	</div>
+
 	<div class="flex flex-col gap-1.5">
 		<form method="POST" use:enhance>
 			<div>
@@ -41,6 +51,7 @@
 					Please make sure your input is correct as it is not being validated.
 				</p>
 			</div>
+
 			<div class="end">
 				<Button>Submit</Button>
 			</div>
