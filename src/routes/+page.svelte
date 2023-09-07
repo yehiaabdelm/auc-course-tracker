@@ -22,7 +22,7 @@
 			Input the CRNs you want to track and we will send you an email when a seat is available.
 		</p>
 		<p class="scroll-m-20 text-sm text-gray-500 italic">
-			Last email sent at: {data?.lastUpdated}
+			Last email sent at: {data?.lastEmailDate}
 		</p>
 	</div>
 
