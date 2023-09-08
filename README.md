@@ -66,3 +66,7 @@ Added more complete opt out. Users are now able to opt out of a specific course 
 ### 9:02 PM, Thu 7 Sep
 
 As the 12:00 AM deadline approaches I increased the cron jobs to hit the endpoint 4 times an hour instead of 2.
+
+### 3:07 PM, Fri 8 Sep
+
+Turned off cron jobs, see you next semester!

@@ -8,6 +8,8 @@
 
 	export let data;
 	export let form;
+
+	let on = false;
 </script>
 
 <div class="container">
@@ -25,47 +27,52 @@
 			Last email sent at: {data?.lastEmailDate}
 		</p>
 	</div>
-
-	<div class="flex flex-col gap-1.5">
-		<form method="POST" use:enhance>
-			<div>
-				<Label for="email">Email</Label>
-				<div class="email padd">
-					<Input type="email" id="email" name="email" placeholder="email" />
+	{#if on}
+		<div class="flex flex-col gap-1.5">
+			<form method="POST" use:enhance>
+				<div>
+					<Label for="email">Email</Label>
+					<div class="email padd">
+						<Input type="email" id="email" name="email" placeholder="email" />
+					</div>
 				</div>
-			</div>
-			<div>
-				<Label>CRN</Label>
-				<div class="crn padd">
-					<Input type="text" id="crn" name="crn1" placeholder="crn" />
-					<Input type="text" id="crn" name="crn2" placeholder="crn" />
-					<Input type="text" id="crn" name="crn3" placeholder="crn" />
-					<Input type="text" id="crn" name="crn4" placeholder="crn" />
-					<Input type="text" id="crn" name="crn5" placeholder="crn" />
-					<Input type="text" id="crn" name="crn6" placeholder="crn" />
-					<Input type="text" id="crn" name="crn7" placeholder="crn" />
+				<div>
+					<Label>CRN</Label>
+					<div class="crn padd">
+						<Input type="text" id="crn" name="crn1" placeholder="crn" />
+						<Input type="text" id="crn" name="crn2" placeholder="crn" />
+						<Input type="text" id="crn" name="crn3" placeholder="crn" />
+						<Input type="text" id="crn" name="crn4" placeholder="crn" />
+						<Input type="text" id="crn" name="crn5" placeholder="crn" />
+						<Input type="text" id="crn" name="crn6" placeholder="crn" />
+						<Input type="text" id="crn" name="crn7" placeholder="crn" />
+					</div>
 				</div>
-			</div>
-			<div class="end">
-				<p class="text-sm text-muted-foreground">
-					Please make sure your input is correct as it is not being validated.
-				</p>
-			</div>
+				<div class="end">
+					<p class="text-sm text-muted-foreground">
+						Please make sure your input is correct as it is not being validated.
+					</p>
+				</div>
 
-			<div class="end">
-				<Button>Submit</Button>
-			</div>
-		</form>
-		{#if form?.message}
-			<Alert.Root variant="destructive">
-				<AlertCircle class="h-4 w-4" />
-				<Alert.Title>Error</Alert.Title>
-				<Alert.Description>
-					{form.message}
-				</Alert.Description>
-			</Alert.Root>
-		{/if}
-	</div>
+				<div class="end">
+					<Button>Submit</Button>
+				</div>
+			</form>
+			{#if form?.message}
+				<Alert.Root variant="destructive">
+					<AlertCircle class="h-4 w-4" />
+					<Alert.Title>Error</Alert.Title>
+					<Alert.Description>
+						{form.message}
+					</Alert.Description>
+				</Alert.Root>
+			{/if}
+		</div>
+	{:else}
+		<p class="scroll-m-20 text-xl text-gray-500">
+			Thank you for using AUC course tracker, see you next semester!
+		</p>
+	{/if}
 </div>
 
 <style>
