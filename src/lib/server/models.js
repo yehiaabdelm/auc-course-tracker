@@ -15,7 +15,7 @@ const emailSchema = new mongoose.Schema({
     body: String
 }, { timestamps: true })
 
-const Course = mongoose.model('course', courseSchema);
-const Email = mongoose.model('email', emailSchema)
+const Course = mongoose.models.course || mongoose.model('course', courseSchema);
+const Email = mongoose.models.email || mongoose.model('email', emailSchema)
 
 export { Course, Email }
