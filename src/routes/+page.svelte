@@ -9,7 +9,7 @@
 	export let data;
 	export let form;
 
-	let on = false;
+	let on = true;
 </script>
 
 <div class="container">

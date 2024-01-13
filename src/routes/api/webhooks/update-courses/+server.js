@@ -18,7 +18,7 @@ export async function POST({ request }) {
     const response = await fetch('https://ssb-prod.ec.aucegypt.edu/PROD/crse_submit.submit_proc', {
         method: 'POST',
         body: new URLSearchParams([
-            ['term_in', '202410'],
+            ['term_in', '202420'],
             ['sel_subj', 'dummy'],
             ['sel_day', 'dummy'],
             ['sel_schd', 'dummy'],
@@ -43,6 +43,7 @@ export async function POST({ request }) {
             ['sel_subj', 'BIOT'],
             ['sel_subj', 'BADM'],
             ['sel_subj', 'CHEM'],
+            ['sel_subj', 'CREL'],
             ['sel_subj', 'CSCE'],
             ['sel_subj', 'CENG'],
             ['sel_subj', 'CORE'],
