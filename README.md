@@ -6,6 +6,7 @@ Will turn the cron jobs off after September 7, 2023 (drop and add deadline).
 
 ![App](image-1.png)
 
+Update: As of Jan 23, 2024. I've handed over the code to the Student Union tech team. 
 
 ## Timeline
 
