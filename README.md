@@ -1,6 +1,7 @@
 # AUC course tracker
 
-For the record
+For the record https://www.aucsu.org/course_tracker
+
 ![History](for-the-record.png)
 
 *Update: As of Jan 23, 2024. I've handed over the code to the Student Union tech team.*
