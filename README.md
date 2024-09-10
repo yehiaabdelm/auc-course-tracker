@@ -1,5 +1,8 @@
 # AUC course tracker
 
+For the record
+![History](for-the-record.png)
+
 I want to avoid a stupid core course and focus on the math and CS courses I'm taking. The ideal course with low workload has 0 remaining seats. So I made this app to check two times every hour if there are empty seats (someone dropped the course). I documented my progress while building the app.
 
 Will turn the cron jobs off after September 7, 2023 (drop and add deadline).
